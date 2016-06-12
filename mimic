@@ -3,6 +3,11 @@
 input=${1}
 text=${2}
 
+inputBase=$(basename ${input})
+inputPath=$(realpath ${input})
+inputPath=${inputPath/\/$inputBase/}
+tempdir=$(mktemp -d)
+
 # Check for argument
 if [[ -z ${input} ]]; then
   echo "Error: no input file given"
@@ -43,15 +48,16 @@ posX=0
 posY=$((${heightStep} * 11))
 
 # Draw using ffmpeg
-ffmpeg -y -i ${input} -vf "drawbox=x=${posX}:y=${posY}:w=${width}:h=${heightStep}:color=black@0.5:t=max" -qscale 0 .${input} &>/dev/null
+ffmpeg -y -i ${input} -vf "drawbox=x=${posX}:y=${posY}:w=${width}:h=${heightStep}:color=black@0.5:t=max" -qscale 0 ${tempdir}/${inputBase} &>/dev/null
 
 # Position for the text
 posX="$((${width} / 2))-(text_w/2)"
 posY="$((${heightStep} * 11 + ${heightStep} / 2 ))-(text_h/2)"
 
 # Draw using ffmpeg
-ffmpeg -y -i .${input} -vf drawtext="fontfile=/System/Library/Fonts/Helvetica.dfont:text='${text}':fontsize=70:fontcolor=white:x=${posX}:y=${posY}" new_${input} &>/dev/null
+ffmpeg -y -i ${tempdir}/${inputBase} -vf drawtext="fontfile=/System/Library/Fonts/Helvetica.dfont:text='${text}':fontsize=70:fontcolor=white:x=${posX}:y=${posY}" ${inputPath}/new_${inputBase} &>/dev/null
 
-rm .${input}
+# Remove tempfile
+rm -rf ${tempdir}
 
 exit 0
