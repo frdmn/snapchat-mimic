@@ -40,6 +40,12 @@ dimensions=(${dimensionOutput[@]})
 width=${dimensions[0]/width=/}
 height=${dimensions[1]/height=/}
 
+# If landscape mode, switch height and width
+if [[ $width > $height ]]; then
+  width=${dimensions[1]/height=/}
+  height=${dimensions[0]/width=/}
+fi
+
 # Find "step" (unit) to properly place the transluent bar
 heightStep=$((${height} / 17))
 
