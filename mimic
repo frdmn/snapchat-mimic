@@ -54,7 +54,7 @@ posX=0
 posY=$((${heightStep} * 11))
 
 # Draw using ffmpeg
-output=$(ffmpeg -y -i ${input} -vf "drawbox=x=${posX}:y=${posY}:w=${width}:h=${heightStep}:color=black@0.5:t=max" -qscale 0 ${tempdir}/${inputBase} 2>&1)
+output=$(ffmpeg -y -i ${input} -vf "drawbox=x=${posX}:y=${posY}:w=${width}:h=${heightStep}:color=black@0.5:t=max" ${tempdir}/${inputBase} 2>&1)
 
 # Check for success
 if [[ $? != 0 ]]; then
