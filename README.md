@@ -1,5 +1,7 @@
 # whatsapp-mimic
 
+![](http://i.imgur.com/eTcVtNZ.png)
+
 Add the typical "WhatsApp bar" to movies without using WhatsApp.
 
 ## Installation
