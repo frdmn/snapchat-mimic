@@ -2,7 +2,7 @@
 
 ![](http://i.imgur.com/eTcVtNZ.png)
 
-Add the typical "WhatsApp bar" to movies without using WhatsApp.
+Add the typical "WhatsApp bar" to movies without using WhatsApp, just using `ffmpeg` and Bash.
 
 ## Installation
 
