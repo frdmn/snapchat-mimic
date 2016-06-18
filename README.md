@@ -30,7 +30,7 @@ Here's a short explanation how to use `whatsapp-mimic`:
 
 * `ffmpeg` (compiled with `--enable-libfreetype`)
 
-If you're using brew, you can pass `enable-libfreetype` while installing:
+If you're using brew, you can pass `--with-freetype` while installing:
 
 ```shell
 brew install ffmpeg --with-freetype
