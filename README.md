@@ -1,18 +1,18 @@
-# whatsapp-mimic
+# snapchat-mimic
 
 ![](http://i.imgur.com/eTcVtNZ.png)
 
-Add the typical "WhatsApp bar" to movies without using WhatsApp, just using `ffmpeg` and Bash.
+Add the typical "Snapchat bar" to movies without using Snapchat, just using `ffmpeg` and Bash.
 
 ## Installation
 
 1. Make sure you've installed all requirements
 2. Clone this repository:
-  `git clone https://github.com/frdmn/whatsapp-mimic`
+  `git clone https://github.com/frdmn/snapchat-mimic`
 
 ## Usage
 
-Here's a short explanation how to use `whatsapp-mimic`:
+Here's a short explanation how to use `snapchat-mimic`:
 
 ```shell
 ./mimic input.mov "Text to add"
