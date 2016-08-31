@@ -2,7 +2,7 @@
 
 ![](http://i.imgur.com/eTcVtNZ.png)
 
-Add the typical "Snapchat bar" to movies without using Snapchat, just using `ffmpeg` and Bash.
+Add a Snapchat overflay to movies without using Snapchat, just using `ffmpeg` and Bash.
 
 ## Installation
 
