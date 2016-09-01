@@ -38,7 +38,7 @@ brew install ffmpeg --with-freetype
 
 ## Version
 
-0.0.1
+1.0.0
 
 ## License
 
